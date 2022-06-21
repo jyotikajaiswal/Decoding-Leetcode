@@ -3,9 +3,7 @@ class Solution {
         StringBuilder sb=new StringBuilder(s); 
         String rev="";
         String b = sb.toString();
-        b = b.replaceAll("[^a-zA-Z0-9]","");
-        b= b.trim();
-        b= b.toLowerCase();
+        b = b.replaceAll("[^a-zA-Z0-9]","").trim().toLowerCase();
         char ch[]=b.toCharArray();
         for(int i=ch.length-1;i>=0;i--){  
         rev+=ch[i];  
