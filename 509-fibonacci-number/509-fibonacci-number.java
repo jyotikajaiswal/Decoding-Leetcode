@@ -4,13 +4,8 @@ class Solution {
             return 0;
         else if (n==1)
             return 1;
-        
         else{
-            int x;
-        x = fib(n-1) + fib(n-2);
-            return x;
+            return fib(n-1) + fib(n-2);
         }
-        
-    
     }
 }
