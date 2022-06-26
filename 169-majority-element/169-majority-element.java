@@ -10,11 +10,11 @@ class Solution {
             else
                 map.put(nums[i],1);
         }
-        int max = nums[0];
+        int k=0;
         for(Integer key : map.keySet()){
-            if(map.get(key)>map.get(max))
-                max = key;
+            if(map.get(key)>nums.length/2)
+                k = key;
         }
-        return max;
+        return k;
     }
 }
