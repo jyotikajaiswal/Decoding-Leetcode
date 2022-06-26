@@ -6,11 +6,8 @@ class Solution {
             if(!map.containsKey(x))
                 map.put(x,1);
             else
-                map.put(x,2);
+                return true;
         }
-        if(map.containsValue(2))
-            return true;
-        else
-            return false;
+        return false;
     }
 }
