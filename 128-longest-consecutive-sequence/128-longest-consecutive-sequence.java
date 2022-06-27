@@ -27,30 +27,26 @@
 //     }
 // }
 class Solution {
-    public int longestConsecutive(int[] nums) {
-        HashMap<Integer, Boolean> map = new HashMap<>();
-        
-        if(nums.length < 1){
-            return 0;
-        }
-        int maxLongest = 1;
-        int longest = 1;
-        
-        for(int i=0; i<nums.length; i++){
-            map.put(nums[i], false);
-        }
-        Arrays.sort(nums);
-        for(int i=0; i<nums.length; i++){
-            if(map.containsKey(nums[i] + 1) && !map.get(nums[i])){
-                longest++;
-                map.put(nums[i], !map.get(nums[i]));
-            }
-            else if(!map.containsKey(nums[i] + 1)){
-                maxLongest = Math.max(longest, maxLongest);
-                longest = 1;
-            }
-        }
-            
-        return maxLongest;
-    }
+
+	int max = 0;
+
+	public int longestConsecutive(int[] nums) {
+		HashMap<Integer,Boolean> hashMap = new HashMap<>();
+		for (int i:nums) hashMap.put(i,true);
+		for (int i: nums) {
+
+			int count = 1, j= i;
+			while (hashMap.containsKey(--j)){
+				hashMap.remove(j);
+				count++;
+			}
+			j = i;
+			while (hashMap.containsKey(++j)){
+				hashMap.remove(j);
+				count++;
+			}
+			max = Math.max(max,count);
+		}
+		return max;
+	}
 }
