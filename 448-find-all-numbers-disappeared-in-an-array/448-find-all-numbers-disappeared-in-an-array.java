@@ -5,10 +5,11 @@ class Solution {
         for(Integer x:nums){  
             set.add(x);  
         }  
-        
-        for(int i=1;i<=nums.length;i++){
+        int i=1;
+        while(i<=nums.length){
             if(!set.contains(i))
                 list.add(i);
+            i++;
         }
         return list;
     }
